@@ -18,6 +18,7 @@ html {
 body {
     background-color: #6b6b6b;
     overflow: hidden;
+    height: 100vh;
 }
 
 .blur {
@@ -26,23 +27,20 @@ body {
     position: absolute;
     right: 0;
     z-index: 999999999;
-    filter: blur(2px);
+    /* background-color: rgba(0, 0, 0, 0.186); */
+    backdrop-filter: blur(1px);
 }
 
-.pluma {
+.pluma-conte {
     height: 20vw;
     width: 20vw;
-    background-color: chartreuse;
+
     position: absolute;
-    
+    background-color: red;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
 }
 
-.pluma1 {
-    height: 80%;
-    width: 40%;
-    background-color: rgb(255, 0, 0);
-    border-radius: 50% 48% 42% 42% / 63% 63% 36% 37%;
-}
 
 .estrella {
     position: absolute;
@@ -140,7 +138,6 @@ body {
     background: radial-gradient(circle, rgba(93,123,169,1) 17%, rgba(18,41,91,1) 70%, rgba(77,16,101,1) 97%);
     height: 100vh;
     width: 100vw;
-    display: flex;
     position: absolute;
 }
 
@@ -148,9 +145,9 @@ body {
 .container {
     height: var(--altura-contenedor);
     width: var(--anchura-contenedor);
-    margin: auto;
-    
-    position: relative;
+    left: calc(50% - 190px);
+    top: calc(50% - 190px);
+    position: absolute;
     
 }
 
@@ -395,3 +392,119 @@ body {
     z-index: 5;
     background-color: #8a0000;
 }
+
+
+/* PELO */
+/* .pelo-conte1 {
+    height: 30%;
+    width: 50%;
+    position: absolute;
+    bottom: 2%;
+    left: -25%;
+    transform: rotate(-20deg);
+    z-index: 2;
+}
+
+.pelo-conte1-contorno {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    animation: bu .8s linear infinite;
+}
+
+.pelo-conte1-cuerpo {
+    height: 90%;
+    width: 98%;
+    top: calc(49% - 45%);
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    animation: bu .8s linear infinite;
+}
+
+@keyframes bu {
+    0%{
+        clip-path: polygon(100% 0, 93% 15%, 86% 26%, 78% 36%, 64% 48%, 46% 51%, 33% 47%, 24% 34%, 17% 19%, 21% 38%, 25% 51%, 29% 60%, 36% 70%, 44% 80%, 53% 86%, 62% 89%, 72% 91%, 82% 88%, 90% 83%, 100% 74%);
+    }
+    15%{
+        clip-path: polygon(100% 0, 91% 5%, 84% 9%, 75% 20%, 65% 34%, 47% 53%, 32% 53%, 22% 48%, 15% 37%, 18% 54%, 22% 60%, 28% 70%, 36% 78%, 44% 84%, 53% 86%, 63% 83%, 72% 76%, 83% 68%, 94% 66%, 100% 74%);
+    }
+    30% {
+        clip-path: polygon(100% 0, 90% 2%, 82% 4%, 72% 9%, 62% 17%, 52% 40%, 36% 58%, 21% 59%, 14% 49%, 17% 63%, 22% 71%, 28% 76%, 35% 84%, 44% 87%, 56% 83%, 65% 73%, 74% 61%, 85% 56%, 95% 63%, 100% 74%);
+    }
+    50% {
+        clip-path: polygon(100% 0, 89% 1%, 80% 1%, 70% 5%, 58% 9%, 44% 20%, 28% 51%, 21% 61%, 11% 65%, 18% 70%, 24% 75%, 32% 74%, 39% 67%, 45% 60%, 52% 55%, 63% 51%, 73% 49%, 84% 53%, 95% 63%, 100% 74%);
+
+    }
+    60% {
+        clip-path: polygon(100% 0, 89% 1%, 80% 1%, 70% 5%, 58% 9%, 44% 20%, 29% 40%, 17% 65%, 14% 94%, 20% 78%, 24% 72%, 30% 67%, 36% 63%, 43% 60%, 52% 55%, 63% 51%, 73% 49%, 84% 53%, 95% 63%, 100% 74%);
+    }
+    100%{
+        clip-path: polygon(100% 0, 93% 15%, 86% 26%, 78% 36%, 64% 48%, 46% 51%, 33% 47%, 24% 34%, 17% 19%, 21% 38%, 25% 51%, 29% 60%, 36% 70%, 44% 80%, 53% 86%, 62% 89%, 72% 91%, 82% 88%, 90% 83%, 100% 74%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pelo-conte2 {
+    height: 150%;
+    width: 200%;
+
+    position: absolute;
+    top: -10%;
+    left: -150%;
+
+    z-index: 1;
+}
+
+.pelo-conte2-contorno {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    animation: bua 8s linear infinite;
+    position: absolute;
+}
+
+.pelo-conte2-cuerpo{
+    height: 99%;
+    width: 99%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: .5%;
+    right: 0;
+    animation: bua 8s linear infinite;
+    z-index: 1;
+}
+
+@keyframes bua {
+    0%{
+        clip-path: polygon(100% 17%, 99% 81%, 92% 86%, 84% 89%, 75% 92%, 64% 91%, 56% 85%, 46% 74%, 34% 67%, 25% 63%, 17% 60%, 8% 61%, 0 63%, 0 50%, 10% 41%, 17% 38%, 27% 33%, 37% 28%, 45% 25%, 57% 24%, 73% 28%, 83% 27%, 90% 23%, 95% 20%);
+    }
+    15%{
+        clip-path: polygon(100% 17%, 99% 81%, 90% 83%, 81% 84%, 70% 85%, 61% 80%, 54% 75%, 45% 58%, 35% 51%, 25% 51%, 17% 50%, 7% 52%, 0 63%, 0 50%, 8% 36%, 13% 30%, 24% 22%, 34% 18%, 42% 16%, 55% 19%, 68% 30%, 77% 34%, 87% 35%, 95% 27%);
+    }
+    30% {
+        clip-path: polygon(100% 17%, 99% 81%, 90% 83%, 81% 84%, 66% 89%, 55% 89%, 47% 87%, 35% 81%, 27% 77%, 18% 70%, 12% 63%, 4% 63%, 0 63%, 0 41%, 6% 35%, 13% 31%, 24% 26%, 34% 24%, 43% 27%, 53% 34%, 64% 34%, 75% 28%, 84% 25%, 92% 21%);
+    }
+    50% {
+        clip-path: polygon(100% 14%, 99% 81%, 90% 73%, 76% 67%, 62% 70%, 52% 77%, 45% 84%, 34% 90%, 22% 89%, 15% 83%, 8% 74%, 4% 67%, 0 58%, 0 25%, 5% 30%, 13% 35%, 22% 37%, 31% 38%, 39% 32%, 50% 19%, 59% 9%, 72% 5%, 84% 3%, 93% 10%);
+
+    }
+    75% {
+        clip-path: polygon(100% 17%, 99% 81%, 90% 83%, 81% 84%, 70% 85%, 61% 80%, 54% 75%, 45% 58%, 35% 51%, 25% 51%, 17% 50%, 7% 52%, 0 63%, 0 50%, 8% 36%, 13% 30%, 24% 22%, 34% 18%, 42% 16%, 55% 19%, 68% 30%, 77% 34%, 87% 35%, 95% 27%);
+    }
+    100%{
+        clip-path: polygon(100% 17%, 99% 81%, 92% 86%, 84% 89%, 75% 92%, 64% 91%, 56% 85%, 46% 74%, 34% 67%, 25% 63%, 17% 60%, 8% 61%, 0 63%, 0 50%, 10% 41%, 17% 38%, 27% 33%, 37% 28%, 45% 25%, 57% 24%, 73% 28%, 83% 27%, 90% 23%, 95% 20%);
+    }
+}
+ */
